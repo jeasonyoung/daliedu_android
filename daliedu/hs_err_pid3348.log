@@ -1,0 +1,80 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:2923), pid=3348, tid=6256
+#  Error: ShouldNotReachHere()
+#
+# Java VM: Java HotSpot(TM) Client VM (11.3-b02 mixed mode windows-x86)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00847400):  JavaThread "Unknown thread" [_thread_in_vm, id=6256, stack(0x008d0000,0x00920000)]
+
+Stack: [0x008d0000,0x00920000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00847400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=6256, stack(0x008d0000,0x00920000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\javaw.exe
+0x7c930000 - 0x7ca02000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c92b000 	C:\WINDOWS\system32\kernel32.dll
+0x77f30000 - 0x77fdc000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77c20000 - 0x77cbf000 	C:\WINDOWS\system32\RPCRT4.dll
+0x76eb0000 - 0x76ec3000 	C:\WINDOWS\system32\Secur32.dll
+0x77e10000 - 0x77ea0000 	C:\WINDOWS\system32\USER32.dll
+0x77bd0000 - 0x77c19000 	C:\WINDOWS\system32\GDI32.dll
+0x76180000 - 0x7619d000 	C:\WINDOWS\system32\IMM32.DLL
+0x7f000000 - 0x7f009000 	C:\WINDOWS\system32\LPK.DLL
+0x74ae0000 - 0x74b45000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\client\jvm.dll
+0x769e0000 - 0x76a0a000 	C:\WINDOWS\system32\WINMM.dll
+0x6d340000 - 0x6d348000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\hpi.dll
+0x76ab0000 - 0x76abb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d860000 - 0x6d86c000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	D:\Program Files\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:C:\Program Files\android-sdk-windows\platforms\android-10\android.jar 
+java_command: com.hello.Test1
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_10
+CLASSPATH=.;C:\Program Files\Java\jdk1.6.0_10\lib;
+PATH=D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;C:\Program Files\Java\jdk1.6.0_10\bin;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Java\jdk1.6.0_10\bin;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\TortoiseSVN\bin;D:\Maven\apache-maven-3.0.5\bin;D:\apache-ant-1.8.4\bin;C:\Program Files\Java\jdk1.6.0_10\bin;C:\Program Files\WPS Office\8.1.0.3526\office6;C:\Program Files\android-sdk-windows\tools;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2003 family Build 3790 Service Pack 2
+
+CPU:total 2 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 2007392k(79988k free), swap 4194303k(3172456k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.3-b02) for windows-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:15:24 by "java_re" with MS VC++ 7.1
+
+time: Thu May 23 09:08:12 2013
+elapsed time: 0 seconds
+

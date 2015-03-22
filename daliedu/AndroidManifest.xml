@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daliedu"
+    android:versionCode="13"
+    android:versionName="1.2.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name="com.daliedu.app.AppContext"
+        android:allowBackup="true"
+        android:icon="@drawable/daliedu_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.daliedu.StartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.daliedu.GuideActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.daliedu.RegisterActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.TreatyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.RegSuccessActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.MyCourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.Class1Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.daliedu.Class2Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.daliedu.Class3Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.ZuHeClassActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.ClassDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionMainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.AnswerMainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.AnswerAskActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.AnswerInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.PlayrecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.SuggestionActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.MyCourseDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.VideoActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.daliedu.VideoActivity2"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.daliedu.VideoActivity3"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.daliedu.DownloadActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.DowningActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.HelpActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionFromCourseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionPaperListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionDoExamActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionDoExamActivity2"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionPaperInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionWriteNoteActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionMyNotebookActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionMyFavoriteActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionMyErrorsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionRecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionChooseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.QuestionCommonFirstActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.SettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.AboutusActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.DownFinishActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.daliedu.SearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- vitamio初始化 -->
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+           	android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <service android:name="com.daliedu.service.DownloadService" >
+        </service>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5200476c56240bc53b029689" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="youeclass.com" />
+    </application>
+
+</manifest>
