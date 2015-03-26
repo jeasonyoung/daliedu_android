@@ -47,11 +47,11 @@ public class HttpConnectUtil {
 			conn.setReadTimeout(millis);
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Cookie", getCookie(appContext));
-			// ¼ì²éÍøÂç
+			// æ£€æŸ¥ç½‘ç»œ
 			conn.connect();
-			// Á¬½Ó´íÎó
+			// è¿æ¥é”™è¯¯
 			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				Log.d(appContext.toString(), "ÇëÇó´íÎó");
+				Log.d(appContext.toString(), "è¯·æ±‚é”™è¯¯");
 				throw new Exception();
 			}else if(conn.getResponseCode() == HttpURLConnection.HTTP_OK)
 			{
@@ -67,7 +67,7 @@ public class HttpConnectUtil {
 						}
 						String tmpcookies = builder.toString();
 						System.out.println("cookies == "+ tmpcookies);
-						// ±£´æcookie
+						// ä¿å­˜cookie
 						if (appContext != null && tmpcookies != "") {
 							appContext.setProperty("cookie", tmpcookies);
 							appCookie = tmpcookies;

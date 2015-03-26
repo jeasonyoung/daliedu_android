@@ -53,7 +53,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 		this.recordTime = recordTime;
 		this.loadLayout = loadLayout;
 //		String url2 = "http://www.youeclass.com:8090/2013yjssssjj2-1.flv";
-		System.out.println("²¥·ÅµØÖ·Îª:url="+url);
+		System.out.println("æ’­æ”¾åœ°å€ä¸º:url="+url);
 		mVideoView.setVideoURI(Uri.parse(url));
 		mVideoView.requestFocus();
 		mVideoView.setOnBufferingUpdateListener(this);
@@ -71,7 +71,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 					handleProgress.sendEmptyMessage(0);
 				}
 			} catch (NullPointerException e) {
-				Log.e(TAG, "²¥·ÅÆ÷»¹Ã»ÓĞ´´½¨");
+				Log.e(TAG, "æ’­æ”¾å™¨è¿˜æ²¡æœ‰åˆ›å»º");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -112,7 +112,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 	@Override
 	public void onCompletion(MediaPlayer mp) {
 		// TODO Auto-generated method stub
-		Log.e("mediaPlayer", "onCompletion ²¥·ÅÍê±Ï");
+		Log.e("mediaPlayer", "onCompletion æ’­æ”¾å®Œæ¯•");
 		skbProgress.setProgress(0);
 		currentTime.setText("00:00");
 		mVideoView.seekTo(0);
@@ -125,7 +125,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 	public boolean onInfo(MediaPlayer mp, int what, int extra) {
 		switch (what) {
         case MediaPlayer.MEDIA_INFO_BUFFERING_START:
-            //¿ªÊ¼»º´æ£¬ÔİÍ£²¥·Å
+            //å¼€å§‹ç¼“å­˜ï¼Œæš‚åœæ’­æ”¾
             if (isPlaying()) {
             	mVideoView.pause();
                 needResume = true;
@@ -133,13 +133,13 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
             loadLayout.setVisibility(View.VISIBLE);
             break;
         case MediaPlayer.MEDIA_INFO_BUFFERING_END:
-            //»º´æÍê³É£¬¼ÌĞø²¥·Å
+            //ç¼“å­˜å®Œæˆï¼Œç»§ç»­æ’­æ”¾
             if (needResume)
             	mVideoView.start();
             loadLayout.setVisibility(View.GONE);
             break;
         case MediaPlayer.MEDIA_INFO_DOWNLOAD_RATE_CHANGED:
-            //ÏÔÊ¾ ÏÂÔØËÙ¶È
+            //æ˜¾ç¤º ä¸‹è½½é€Ÿåº¦
             Log.e(TAG,"download rate:" + extra);
             break;
         }
@@ -174,7 +174,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 		@Override
 		public void onProgressChanged(SeekBar seekBar, int progress,
 				boolean fromUser) {
-			// Ô­±¾ÊÇ(progress/seekBar.getMax())*player.mediaPlayer.getDuration()
+			// åŸæœ¬æ˜¯(progress/seekBar.getMax())*player.mediaPlayer.getDuration()
 			this.progress = (int) (progress * mVideoView.getDuration() / seekBar
 					.getMax());
 		}
@@ -186,16 +186,16 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 
 		@Override
 		public void onStopTrackingTouch(SeekBar seekBar) {
-			// seekTo()µÄ²ÎÊıÊÇÏà¶ÔÓëÓ°Æ¬Ê±¼äµÄÊı×Ö£¬¶ø²»ÊÇÓëseekBar.getMax()Ïà¶ÔµÄÊı×Ö
+			// seekTo()çš„å‚æ•°æ˜¯ç›¸å¯¹ä¸å½±ç‰‡æ—¶é—´çš„æ•°å­—ï¼Œè€Œä¸æ˜¯ä¸seekBar.getMax()ç›¸å¯¹çš„æ•°å­—
 			mVideoView.seekTo(progress);
-			// ¸ü¸ÄÊ±¼ä
+			// æ›´æ”¹æ—¶é—´
 			currentTime.setText(getTime(progress / 1000));
 		}
 	}
 
 	public void play()
 	{
-		Log.e(TAG,"videoview²¥·Å");
+		Log.e(TAG,"videoviewæ’­æ”¾");
 		mVideoView.start();
 		if(mTimer == null)
 		{
@@ -206,7 +206,7 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 	}
 	public void pause()
 	{
-		Log.e(TAG,"videoviewÔİÍ£");
+		Log.e(TAG,"videoviewæš‚åœ");
 		if(mVideoView.isPlaying())
 		{
 			mVideoView.pause();
@@ -217,13 +217,13 @@ public class VitamioVideoPlayer implements OnBufferingUpdateListener,
 	}
 	public void stop()
 	{
-		Log.e(TAG,"videoView Í£Ö¹²¥·Å");
+		Log.e(TAG,"videoView åœæ­¢æ’­æ”¾");
 		if(mVideoView != null)
 			mVideoView.stopPlayback();
 		if(mTimer!=null)
 			mTimer.cancel();
 		mTimer = null;
-		//°ÑÁÙÊ±ÎÄ¼şÉ¾³ı
+		//æŠŠä¸´æ—¶æ–‡ä»¶åˆ é™¤
 		File f = new File(Environment.getExternalStorageDirectory()+File.separator+"eschool"+"temp_"+File.separator+"current.flv");
 		if(f.exists()){
 			f.delete();

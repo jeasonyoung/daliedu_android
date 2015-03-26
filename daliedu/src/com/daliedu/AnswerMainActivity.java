@@ -104,7 +104,7 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
 
         @Override
         protected void onPostExecute(String result) {
-            //Ω‚Œˆjson
+            //Ëß£Êûêjson
         	LinkedList<Problem> list = parseJson(result);
         	if(mListItems!=null)
         	{
@@ -114,7 +114,7 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
         	{
         		mListItems = list;
         	}
-        	answerInfosText.setText(username+"ƒ˙”–"+mListItems.size()+"∏ˆÃ·Œ ");
+        	answerInfosText.setText(username+"ÊÇ®Êúâ"+mListItems.size()+"‰∏™ÊèêÈóÆ");
         	if(mAdapter==null)
         	{
         		initFooter(list);
@@ -140,13 +140,13 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
     	else if(size>=PAGESIZE)
     	{
     		lvNews_footer.setVisibility(View.VISIBLE);
-			lvNews_foot_more.setText("∏¸∂‡");
+			lvNews_foot_more.setText("Êõ¥Â§ö");
 			lvNews_foot_progress.setVisibility(View.GONE);
 			lvNews_footer.setTag(0);
     	}else
 		{
 			lvNews_footer.setVisibility(View.VISIBLE);
-			lvNews_foot_more.setText("“—º”‘ÿ»´≤ø");
+			lvNews_foot_more.setText("Â∑≤Âä†ËΩΩÂÖ®ÈÉ®");
 			lvNews_foot_progress.setVisibility(View.GONE);
 			lvNews_footer.setTag(1);
 		}
@@ -190,12 +190,12 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
     }
     private void footerClick()
 	{
-		//“—º”‘ÿ»´≤ø
+		//Â∑≤Âä†ËΩΩÂÖ®ÈÉ®
 		if(Integer.valueOf(1).equals((Integer)lvNews_footer.getTag()))
 		{
 			return;
 		}
-		lvNews_foot_more.setText("ÕÊ√¸º”‘ÿ÷–");
+		lvNews_foot_more.setText("Áé©ÂëΩÂä†ËΩΩ‰∏≠");
 		lvNews_foot_progress.setVisibility(View.VISIBLE);
 		final Handler handler = new Handler(){
 			@Override
@@ -208,23 +208,23 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
 					if(list.size()==0 || list.size()<PAGESIZE)
 					{
 						lvNews_footer.setVisibility(View.VISIBLE);
-						lvNews_foot_more.setText("“—º”‘ÿ»´≤ø");
+						lvNews_foot_more.setText("Â∑≤Âä†ËΩΩÂÖ®ÈÉ®");
 						lvNews_foot_progress.setVisibility(View.GONE);
 						lvNews_footer.setTag(1);
 					}else
 					{
 						lvNews_footer.setVisibility(View.VISIBLE);
-						lvNews_foot_more.setText("∏¸∂‡");
+						lvNews_foot_more.setText("Êõ¥Â§ö");
 						lvNews_foot_progress.setVisibility(View.GONE);
 						lvNews_footer.setTag(0);
 					}
-					//À¢–¬ ˝æ›
+					//Âà∑Êñ∞Êï∞ÊçÆ
 					mListItems.addAll(list);
 					mAdapter.notifyDataSetChanged();
 					break;
 				case -1:
 					lvNews_footer.setVisibility(View.VISIBLE);
-					lvNews_foot_more.setText("º”‘ÿ ß∞‹,µ„ª˜º”‘ÿ");
+					lvNews_foot_more.setText("Âä†ËΩΩÂ§±Ë¥•,ÁÇπÂáªÂä†ËΩΩ");
 					lvNews_foot_progress.setVisibility(View.GONE);
 					lvNews_footer.setTag(0);
 					break;
@@ -253,7 +253,7 @@ public class AnswerMainActivity extends ListActivity implements OnClickListener{
     @Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
-    	//¥¯À¢–¬µƒlist,position¥”1ø™ º,¥¯¡Àheader
+    	//Â∏¶Âà∑Êñ∞ÁöÑlist,position‰ªé1ÂºÄÂßã,Â∏¶‰∫Üheader
     	if(position>mListItems.size())
 		{
 			footerClick();
