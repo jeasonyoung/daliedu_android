@@ -154,9 +154,12 @@ public class AppContext extends Application {
 	 * @return
 	 */
 	public boolean isNetworkConnected() {
-		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo ni = cm.getActiveNetworkInfo();
-		return ni != null && ni.isConnectedOrConnecting();
+		final ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		if(cm != null){
+			final NetworkInfo ni = cm.getActiveNetworkInfo();
+			return ni != null && ni.isConnectedOrConnecting();
+		}
+		return false;
 	}
 
 	/**
@@ -166,16 +169,17 @@ public class AppContext extends Application {
 	 */
 	public int getNetworkType() {
 		int netType = 0;
-		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-		if (networkInfo == null) {
-			return netType;
-		}
+		final ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		if(connectivityManager == null) return netType;
+		
+		final NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+		if (networkInfo == null) return netType; 
+		
 		int nType = networkInfo.getType();
 		if (nType == ConnectivityManager.TYPE_MOBILE) {
-			String extraInfo = networkInfo.getExtraInfo();
+			final String extraInfo = networkInfo.getExtraInfo();
 			if (!StringUtils.isEmpty(extraInfo)) {
-				if (extraInfo.toLowerCase().equals("cmnet")) {
+				if (extraInfo.equalsIgnoreCase("cmnet")) {
 					netType = NETTYPE_CMNET;
 				} else {
 					netType = NETTYPE_CMWAP;

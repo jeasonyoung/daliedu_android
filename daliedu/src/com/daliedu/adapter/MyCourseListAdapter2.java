@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -178,9 +179,16 @@ public class MyCourseListAdapter2 extends BaseAdapter{
 	{
 		ConnectivityManager conMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		 //mobile 3G Data Network
-        State mobile = conMan.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState();
+		State mobile = State.DISCONNECTED, wifi = State.DISCONNECTED;
+		NetworkInfo mobileNetInfo= conMan.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		if(mobileNetInfo != null){
+			mobile = mobileNetInfo.getState();
+		}
         //wifi
-        State wifi = conMan.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+		NetworkInfo wifiNetInfo = conMan.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+		if(wifiNetInfo != null){
+			wifi = wifiNetInfo.getState();
+		}
         if(wifi==State.CONNECTED||wifi==State.CONNECTING)
         {
         	return true;
